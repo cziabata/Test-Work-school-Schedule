@@ -28,19 +28,19 @@ const CommonScheduleCellStyles = css`
 `
 
 const MondayRow = css`
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
 `
 const TuesdayRow = css`
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
 `
 const WednesdayRow = css`
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
 `
 const ThursdayRow = css`
-    grid-row: 5 / 6;
+    grid-row: 4 / 5;
 `
 const FridayRow = css`
-    grid-row: 6 / 7;
+    grid-row: 5 / 6;
 `
 
 const FifthClassColumn = css`
@@ -70,7 +70,7 @@ const EleventhClassColumn = css`
 export const TableLayout = styled.div`
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 45px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 45px 1fr;
     gap: 1px;
 `
 export const InfoCell = styled.div`
@@ -113,6 +113,12 @@ export const EleventhClassCell = styled.div`
 `
 
 // DAYS STYLED COMPONENTS
+export const DaysGridContainer = styled.div`
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1px;
+`
 export const MondayCell = styled.div`
     ${CommonDayCellStyles}
     ${MondayRow};
@@ -135,6 +141,12 @@ export const FridayCell = styled.div`
 `
 
 // FIFTH CLASS SCHEDULE
+export const FifthClassWeeklySchedule = styled.div`
+    ${FifthClassColumn};
+    /* grid-template-columns: 1fr;
+    display: grid;
+    gap: 1px; */
+`
 export const FifthClassMondaySchedule = styled.div`
     ${CommonScheduleCellStyles};
     ${MondayRow};
