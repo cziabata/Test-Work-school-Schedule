@@ -18,8 +18,7 @@ export const createSchedule = (data) => {
         let teacherName = availableTeachersList.filter(teacher => teacher.id === teacherID)[0].name;
 
         subjectsList.push({
-            id: i,
-            order: i+1, 
+            id: i, 
             subject:availableSubjectsList[index],
             subjectTeacher: teacherName,
             room: rooms[i]
