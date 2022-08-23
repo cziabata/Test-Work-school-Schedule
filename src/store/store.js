@@ -17,5 +17,6 @@ class Store {
         this.fifthClassWeeklySchedule = createClassWeeklyScheduleData(data)
     }
 
+
 }
 export default new Store;

@@ -3,14 +3,14 @@ import * as S from "../../styled_components/schedule";
 import { DARK_PINK_COLOR, APP_BACKGROUND_COLOR } from "../../styled_components/variables";
 
 
-export const ScheduleItem = ({data, weeklyBoards}) => {
+export const ScheduleItem = ({dayBoard, weeklyBoards}) => {
     
     const [lessonsData, setLessonsData] = useState(null);
     const [draggableLesson, setDraggableLesson] = useState(null);
 
     useEffect(()=>{
-        setLessonsData(data)
-    }, [data])
+        setLessonsData(dayBoard)
+    }, [dayBoard])
 
     const changeLessonsOrder = (lesson, draggableLesson) => {
        let orderedLessons = lessonsData.daySchedule.map(les => {

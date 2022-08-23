@@ -5,13 +5,14 @@ import {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,
 import { observer } from "mobx-react-lite";
 import store from "../../store/store";
 
-const schedule = (dayBoardData) => {
+const schedule = (dayBoardData, index) => {
   switch (dayBoardData.day) {
     case MONDAY: {
       return (
         <S.FifthClassMondaySchedule key={dayBoardData.id}>
           <ScheduleItem
-            data={dayBoardData}
+            index={index}
+            dayBoard={dayBoardData}
             weeklyBoards={store.fifthClassWeeklySchedule}
           />
         </S.FifthClassMondaySchedule>
@@ -21,7 +22,8 @@ const schedule = (dayBoardData) => {
       return (
         <S.FifthClassTuesdaySchedule key={dayBoardData.id}>
           <ScheduleItem
-            data={dayBoardData}
+            index={index}
+            dayBoard={dayBoardData}
             weeklyBoards={store.fifthClassWeeklySchedule}
           />
         </S.FifthClassTuesdaySchedule>
@@ -31,7 +33,8 @@ const schedule = (dayBoardData) => {
       return (
         <S.FifthClassWednesdaySchedule key={dayBoardData.id}>
           <ScheduleItem
-            data={dayBoardData}
+            index={index}
+            dayBoard={dayBoardData}
             weeklyBoards={store.fifthClassWeeklySchedule}
           />
         </S.FifthClassWednesdaySchedule>
@@ -41,7 +44,8 @@ const schedule = (dayBoardData) => {
       return (
         <S.FifthClassThursdaySchedule key={dayBoardData.id}>
           <ScheduleItem
-            data={dayBoardData}
+            index={index}
+            dayBoard={dayBoardData}
             weeklyBoards={store.fifthClassWeeklySchedule}
           />
         </S.FifthClassThursdaySchedule>
@@ -51,7 +55,8 @@ const schedule = (dayBoardData) => {
       return (
         <S.FifthClassFridaySchedule key={dayBoardData.id}>
           <ScheduleItem
-            data={dayBoardData}
+            index={index}
+            dayBoard={dayBoardData}
             weeklyBoards={store.fifthClassWeeklySchedule}
           />
         </S.FifthClassFridaySchedule>
@@ -64,6 +69,6 @@ const schedule = (dayBoardData) => {
 
 export const FifthClassWeeklySchedule = observer(() => {
   return (
-    <S.FifthClassWeeklySchedule>{store.fifthClassWeeklySchedule.map((dayBoard) => schedule(dayBoard))}</S.FifthClassWeeklySchedule>
+    <S.FifthClassWeeklySchedule>{store.fifthClassWeeklySchedule.map((dayBoard, index) => schedule(dayBoard, index))}</S.FifthClassWeeklySchedule>
   );
 });
