@@ -53,11 +53,11 @@ export const ScheduleItem = ({dayBoard, weeklyBoards, dayBoardIndex, changeSched
     const handleOnDrop = (e, lesson, board) => {
         e.preventDefault();
         //changeLessonsOrder(lesson, draggableLesson)
-        
         const currentIndex = currentBoard.daySchedule.indexOf(lesson);
         currentBoard.daySchedule.splice(currentIndex, 1);
         const dropIndex = board.daySchedule.indexOf(lesson);
         board.daySchedule.splice(dropIndex+1, 0, draggableLesson);
+        debugger
         changeSchedule(weeklyBoards.map(b => {
             if(b.id === board.id) {
                 return board

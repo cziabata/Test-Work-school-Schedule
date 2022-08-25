@@ -38,11 +38,12 @@ const handleOnDragOver = (e) => {
 const handleOnDrop = (e, lesson, board) => {
     e.preventDefault();
     //changeLessonsOrder(lesson, draggableLesson)
+    if(lesson === draggableLesson) return
     
     const currentIndex = currentBoard.daySchedule.indexOf(draggableLesson);
     currentBoard.daySchedule.splice(currentIndex, 1);
     const dropIndex = board.daySchedule.indexOf(lesson);
-    board.daySchedule.splice(dropIndex, 0, draggableLesson);
+    board.daySchedule.splice( board===currentBoard &&  lesson.order < draggableLesson.order ? dropIndex : dropIndex+1, 0, draggableLesson);
     store.changeFifthClassWeeklySchedule(store.fifthClassWeeklySchedule.map(b => {
         if(b.id === board.id) {
             return board
@@ -52,9 +53,7 @@ const handleOnDrop = (e, lesson, board) => {
         }
         return b
     }))
-}
-  console.log(store.fifthClassWeeklySchedule)
-  debugger
+} 
   return (
     <S.FifthClassWeeklySchedule>{store.fifthClassWeeklySchedule.map((dayBoardData, index) => <S.DayScheduleCell>
       {dayBoardData.daySchedule.map((lesson) => 

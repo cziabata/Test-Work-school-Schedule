@@ -24,7 +24,12 @@ class Store {
             }))}));
     }
     changeFifthClassWeeklySchedule(newSchedule) {
-        this.fifthClassWeeklySchedule = newSchedule;
+        this.fifthClassWeeklySchedule = newSchedule.map(day=>({
+            ...day,
+            daySchedule: day.daySchedule.map((lesson, index)=>({
+                ...lesson,
+                order: index+1
+            }))}));
     }
     setCurrentBoard(board) {
         this.currentBoard = board;
