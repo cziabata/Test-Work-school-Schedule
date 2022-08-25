@@ -26,7 +26,7 @@ export const FifthClassWeeklySchedule = observer(() => {
   };
   const handleOnDrop = (e, lesson, board) => {
     e.preventDefault();
-    if(board.daySchedule.length >= 7) return
+    if(board.daySchedule.length >= 7 && board !== currentBoard) return
     if (lesson === draggableLesson) return;
 
     const currentIndex = currentBoard.daySchedule.indexOf(draggableLesson);
