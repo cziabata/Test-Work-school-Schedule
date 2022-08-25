@@ -334,3 +334,10 @@ export const EleventhClassFridaySchedule = styled.div`
     ${FridayRow};
     ${EleventhClassColumn};
 `
+
+export const DayScheduleCell = styled.div`
+    height: ${LARGE_CELL_HEIGHT};
+    border: 2px solid ${YELLOW_BORDER_COLOR};
+    border-radius: 3px;
+    padding: 2px 1px;
+`
