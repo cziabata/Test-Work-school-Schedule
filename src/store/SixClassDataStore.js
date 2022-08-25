@@ -1,20 +1,15 @@
 import { makeAutoObservable } from "mobx";
 import { createClassWeeklyScheduleData } from "../utils/createClassWeeklySchedule";
 
-class Store {
+class SixthClassDataStore {
     constructor() {
         makeAutoObservable(this)
     }
 
-    data = null;
     fifthClassWeeklySchedule = null; 
     currentBoard = null;
-
-    setData(data) {
-        this.data = data;
-    }
     
-    setFifthClassWeeklySchedule(data) {
+    setSixthClassWeeklySchedule(data) {
         this.fifthClassWeeklySchedule = createClassWeeklyScheduleData(data)
         .map(day=>({
             ...day,
@@ -23,7 +18,7 @@ class Store {
                 order: index+1
             }))}));
     }
-    changeFifthClassWeeklySchedule(newSchedule) {
+    changeSixthClassWeeklySchedule(newSchedule) {
         this.fifthClassWeeklySchedule = newSchedule.map(day=>({
             ...day,
             daySchedule: day.daySchedule.map((lesson, index)=>({
@@ -36,4 +31,4 @@ class Store {
     }
 
 }
-export default new Store();
+export default new SixthClassDataStore();

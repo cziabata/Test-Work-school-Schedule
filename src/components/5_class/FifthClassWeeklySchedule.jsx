@@ -6,7 +6,7 @@ import {
   APP_BACKGROUND_COLOR,
 } from "../../styled_components/variables";
 import { observer } from "mobx-react-lite";
-import store from "../../store/store";
+import store from "../../store/FifthClassDataStore";
 
 export const FifthClassWeeklySchedule = observer(() => {
   const [draggableLesson, setDraggableLesson] = useState(null);

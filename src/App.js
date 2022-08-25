@@ -2,7 +2,8 @@ import { GlobalStyles, AdditionalInfoContainer } from "./styled_components/commo
 import * as S from "./styled_components/base_layout";
 import { Table } from "./components/table/Table";
 import { useFetch } from "./utils/useFetch";
-import store from "./store/store";
+import FifthClassDataStore from "./store/FifthClassDataStore";
+import store from "./store/_MainStore";
 import { useEffect } from "react";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const {data, isPending, error} = useFetch("http://localhost:8000/data");
 
   useEffect(()=> {
-    data && store.setFifthClassWeeklySchedule(data);
+    data && FifthClassDataStore.setFifthClassWeeklySchedule(data);
     data && store.setData(data);
   }, [data])
 

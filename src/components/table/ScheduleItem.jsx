@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as S from "../../styled_components/schedule";
 import { DARK_PINK_COLOR, APP_BACKGROUND_COLOR } from "../../styled_components/variables";
-import store from "../../store/store";
+import store from "../../store/FifthClassDataStore";
 
 
 export const ScheduleItem = ({dayBoard, weeklyBoards, dayBoardIndex, changeSchedule}) => {
