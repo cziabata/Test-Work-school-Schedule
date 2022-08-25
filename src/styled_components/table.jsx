@@ -6,6 +6,11 @@ import { RED_BORDER_COLOR, GREEN_BORDER_COLOR, YELLOW_BORDER_COLOR,
 
 // REUSABLE CSS FRAGMENTS
 
+const ClassWeeklyScheduleCellStyles = css`
+    display: grid;
+    gap: 1px;
+`
+
 const CommonClassCellStyles = css`
     ${FlexCenteredContainer}
     height: ${SMALL_CELL_HEIGHT};
@@ -143,34 +148,7 @@ export const FridayCell = styled.div`
 // FIFTH CLASS SCHEDULE
 export const FifthClassWeeklySchedule = styled.div`
     ${FifthClassColumn};
-    /* grid-template-columns: 1fr;
-    display: grid;
-    gap: 1px; */
-`
-export const FifthClassMondaySchedule = styled.div`
-    ${CommonScheduleCellStyles};
-    ${MondayRow};
-    ${FifthClassColumn};
-`
-export const FifthClassTuesdaySchedule = styled.div`
-    ${CommonScheduleCellStyles};
-    ${TuesdayRow};
-    ${FifthClassColumn};
-`
-export const FifthClassWednesdaySchedule = styled.div`
-    ${CommonScheduleCellStyles};
-    ${WednesdayRow};
-    ${FifthClassColumn};
-`
-export const FifthClassThursdaySchedule = styled.div`
-    ${CommonScheduleCellStyles};
-    ${ThursdayRow};
-    ${FifthClassColumn};
-`
-export const FifthClassFridaySchedule = styled.div`
-    ${CommonScheduleCellStyles};
-    ${FridayRow};
-    ${FifthClassColumn};
+    ${ClassWeeklyScheduleCellStyles}
 `
 
 // SIXTH CLASS SCHEDULE
